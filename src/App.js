@@ -1,3 +1,5 @@
+import { Card, Container } from "react-bootstrap";
+
 const characters = [
   {
     "id": 1009220,
@@ -33,21 +35,25 @@ const characters = [
 
 function App() {
   return (
-    <div className="container">
-      <h1>Characters</h1>
+    <Container>
+      <h1 className="">Characters</h1>
       {
         characters.map((character, index) => (
-          <div className="character" key={index}>
-            <h2>{character.name}</h2>
-            <p>{character.description}</p>
-            <img height="75" alt={character.name} src={character.thumbnail.path + '.' + character.thumbnail.extension}></img>
-          </div>
+          <Card key={index}>
+            <Card.Img  style={{ padding: '5px', maxHeight: '150px', objectFit: 'contain'}} variant="bottom" src={character.thumbnail.path + '.' + character.thumbnail.extension} />
+            <Card.Body>
+              <Card.Title>
+                {character.name}
+              </Card.Title>
+              <Card.Text>
+                {character.description}
+              </Card.Text>
+            </Card.Body>
+          </Card>
         ))
       }
-    </div>
-
-
-  );
+    </Container>
+ );
 }
 
 export default App;
