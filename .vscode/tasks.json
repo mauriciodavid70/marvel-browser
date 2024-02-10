@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start",
+			"label": "npm: start",
+			"detail": "react-scripts start",
+			"isBackground": true,
+			"problemMatcher": {
+				// Unique identifier for this problem matcher instance
+				"owner": "reactCompilation",
+				"pattern": {
+					"regexp": "^$" // Match not empty
+				},
+				"background": {
+				  // Indicates the matcher should monitor background tasks from the start
+				  "activeOnStart": true,
+				  // Regex pattern that marks the beginning of the task's activity (e.g., starting compilation)
+				  "beginsPattern": "^Compiling...",
+				  // Regex pattern that indicates the task has completed a cycle (e.g., finished compilation)
+				  "endsPattern": "^Compiled .*"
+				}
+			}
+		}
+	]
+}
