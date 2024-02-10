@@ -33,18 +33,18 @@ const characters = [
 
 function App() {
   return (
-    <>
+    <div className="container">
       <h1>Characters</h1>
       {
         characters.map((character, index) => (
-          <div key={index}>
+          <div className="character" key={index}>
             <h2>{character.name}</h2>
             <p>{character.description}</p>
             <img height="75" alt={character.name} src={character.thumbnail.path + '.' + character.thumbnail.extension}></img>
           </div>
         ))
       }
-    </>
+    </div>
 
 
   );
