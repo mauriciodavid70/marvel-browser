@@ -1,4 +1,5 @@
-import { Card, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { Character } from "./Character";
 
 const characters = [
   {
@@ -39,17 +40,7 @@ function App() {
       <h1 className="">Characters</h1>
       {
         characters.map((character, index) => (
-          <Card key={index}>
-            <Card.Img  style={{ padding: '5px', maxHeight: '150px', objectFit: 'contain'}} variant="bottom" src={character.thumbnail.path + '.' + character.thumbnail.extension} />
-            <Card.Body>
-              <Card.Title>
-                {character.name}
-              </Card.Title>
-              <Card.Text>
-                {character.description}
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <Character key={index} character={character}></Character>
         ))
       }
     </Container>
